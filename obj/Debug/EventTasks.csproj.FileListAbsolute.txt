@@ -1,0 +1,10 @@
+C:\Users\user\source\repos\Event_Tasks\bin\Debug\Event_Tasks.exe.config
+C:\Users\user\source\repos\Event_Tasks\bin\Debug\Event_Tasks.exe
+C:\Users\user\source\repos\Event_Tasks\bin\Debug\Event_Tasks.pdb
+C:\Users\user\source\repos\Event_Tasks\obj\Debug\EventTasks.csproj.AssemblyReference.cache
+C:\Users\user\source\repos\Event_Tasks\obj\Debug\Event_Tasks.Properties.Resources.resources
+C:\Users\user\source\repos\Event_Tasks\obj\Debug\EventTasks.csproj.GenerateResource.cache
+C:\Users\user\source\repos\Event_Tasks\obj\Debug\EventTasks.csproj.CoreCompileInputs.cache
+C:\Users\user\source\repos\Event_Tasks\obj\Debug\Event_Tasks.exe
+C:\Users\user\source\repos\Event_Tasks\obj\Debug\Event_Tasks.pdb
+C:\Users\user\source\repos\Event_Tasks\obj\Debug\EventTasks.events_task.resources
