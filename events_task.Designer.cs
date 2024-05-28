@@ -38,7 +38,10 @@
             this.monthly = new System.Windows.Forms.Label();
             this.prev_btn = new System.Windows.Forms.Button();
             this.next_btn = new System.Windows.Forms.Button();
-            this.calendar_grid = new System.Windows.Forms.Label();
+            this.task_btn = new System.Windows.Forms.Button();
+            this.event_btn = new System.Windows.Forms.Button();
+            this.consumable_btn = new System.Windows.Forms.Button();
+            this.present_month_btn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // sum_label
@@ -151,20 +154,59 @@
             this.next_btn.UseVisualStyleBackColor = true;
             this.next_btn.Click += new System.EventHandler(this.next_btn_Click);
             // 
-            // calendar_grid
+            // task_btn
             // 
-            this.calendar_grid.BackColor = System.Drawing.Color.Transparent;
-            this.calendar_grid.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.calendar_grid.Location = new System.Drawing.Point(110, 80);
-            this.calendar_grid.Name = "calendar_grid";
-            this.calendar_grid.Size = new System.Drawing.Size(560, 360);
-            this.calendar_grid.TabIndex = 88;
+            this.task_btn.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.task_btn.Location = new System.Drawing.Point(12, 24);
+            this.task_btn.Name = "task_btn";
+            this.task_btn.Size = new System.Drawing.Size(92, 72);
+            this.task_btn.TabIndex = 88;
+            this.task_btn.Text = "Task";
+            this.task_btn.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.task_btn.UseVisualStyleBackColor = true;
+            // 
+            // event_btn
+            // 
+            this.event_btn.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.event_btn.Location = new System.Drawing.Point(12, 102);
+            this.event_btn.Name = "event_btn";
+            this.event_btn.Size = new System.Drawing.Size(92, 72);
+            this.event_btn.TabIndex = 89;
+            this.event_btn.Text = "Event";
+            this.event_btn.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.event_btn.UseVisualStyleBackColor = true;
+            // 
+            // consumable_btn
+            // 
+            this.consumable_btn.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.consumable_btn.Location = new System.Drawing.Point(12, 180);
+            this.consumable_btn.Name = "consumable_btn";
+            this.consumable_btn.Size = new System.Drawing.Size(92, 72);
+            this.consumable_btn.TabIndex = 90;
+            this.consumable_btn.Text = "Consumable";
+            this.consumable_btn.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.consumable_btn.UseVisualStyleBackColor = true;
+            // 
+            // present_month_btn
+            // 
+            this.present_month_btn.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.present_month_btn.Location = new System.Drawing.Point(341, 24);
+            this.present_month_btn.Name = "present_month_btn";
+            this.present_month_btn.Size = new System.Drawing.Size(50, 30);
+            this.present_month_btn.TabIndex = 91;
+            this.present_month_btn.Text = "今月";
+            this.present_month_btn.UseVisualStyleBackColor = true;
+            this.present_month_btn.Click += new System.EventHandler(this.present_month_btn_Click);
             // 
             // events_task
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(684, 461);
+            this.Controls.Add(this.present_month_btn);
+            this.Controls.Add(this.consumable_btn);
+            this.Controls.Add(this.event_btn);
+            this.Controls.Add(this.task_btn);
             this.Controls.Add(this.next_btn);
             this.Controls.Add(this.prev_btn);
             this.Controls.Add(this.monthly);
@@ -175,7 +217,6 @@
             this.Controls.Add(this.tue_label);
             this.Controls.Add(this.mon_label);
             this.Controls.Add(this.sum_label);
-            this.Controls.Add(this.calendar_grid);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "events_task";
@@ -197,7 +238,10 @@
         private System.Windows.Forms.Label monthly;
         private System.Windows.Forms.Button prev_btn;
         private System.Windows.Forms.Button next_btn;
-        private System.Windows.Forms.Label calendar_grid;
+        private System.Windows.Forms.Button task_btn;
+        private System.Windows.Forms.Button event_btn;
+        private System.Windows.Forms.Button consumable_btn;
+        private System.Windows.Forms.Button present_month_btn;
     }
 }
 
