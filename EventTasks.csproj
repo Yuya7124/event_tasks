@@ -53,6 +53,12 @@
     <Compile Include="events_task.Designer.cs">
       <DependentUpon>events_task.cs</DependentUpon>
     </Compile>
+    <Compile Include="task_list.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="task_list.Designer.cs">
+      <DependentUpon>task_list.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="events_task.resx">
@@ -66,7 +72,11 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="task_list.resx">
+      <DependentUpon>task_list.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -79,6 +89,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\カレンダー.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\メモアイコン.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\段ボール箱.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\矢印%28左%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\矢印%28右%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\カレンダー%28小%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

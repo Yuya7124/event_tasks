@@ -25,6 +25,7 @@ namespace EventTasks
         private void events_task_Load(object sender, EventArgs e)
         {
             monthly.Text = dt.ToString("yyyy.MM");
+            present_month_btn.Text = dt.Day.ToString("d");
             edit_calendar(dt.Date);
         }
 
@@ -127,6 +128,20 @@ namespace EventTasks
             DateTime present_month = dt.AddMonths(BetweenMonth);
             monthly.Text = present_month.ToString("yyyy.MM");
             edit_calendar(present_month);
+        }
+        private void task_btn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void event_btn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void consumable_btn_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
