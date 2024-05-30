@@ -7,4 +7,6 @@ C:\Users\user\source\repos\Event_Tasks\obj\Debug\EventTasks.csproj.GenerateResou
 C:\Users\user\source\repos\Event_Tasks\obj\Debug\EventTasks.csproj.CoreCompileInputs.cache
 C:\Users\user\source\repos\Event_Tasks\obj\Debug\Event_Tasks.exe
 C:\Users\user\source\repos\Event_Tasks\obj\Debug\Event_Tasks.pdb
-C:\Users\user\source\repos\Event_Tasks\obj\Debug\EventTasks.events_task.resources
+C:\Users\user\source\repos\Event_Tasks\obj\Debug\Event_Tasks.task_list.resources
+C:\Users\user\source\repos\Event_Tasks\obj\Debug\Event_Tasks.new_task_list.resources
+C:\Users\user\source\repos\Event_Tasks\obj\Debug\EventTasks.main_menu.resources

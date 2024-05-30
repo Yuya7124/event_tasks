@@ -1,6 +1,6 @@
 ﻿namespace EventTasks
 {
-    partial class events_task
+    partial class main_menu
     {
         /// <summary>
         /// 必要なデザイナー変数です。
@@ -183,7 +183,7 @@
             this.task_btn.Name = "task_btn";
             this.task_btn.Size = new System.Drawing.Size(92, 66);
             this.task_btn.TabIndex = 88;
-            this.task_btn.Text = "Task";
+            this.task_btn.Text = "Task ";
             this.task_btn.TextAlign = System.Drawing.ContentAlignment.TopLeft;
             this.task_btn.UseVisualStyleBackColor = true;
             this.task_btn.Click += new System.EventHandler(this.task_btn_Click);

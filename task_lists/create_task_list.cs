@@ -12,9 +12,19 @@ namespace Event_Tasks
 {
     public partial class task_list : Form
     {
+
         public task_list()
         {
             InitializeComponent();
+        }
+        private void task_list_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void set_task_btn_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

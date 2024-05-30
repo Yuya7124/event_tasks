@@ -10,13 +10,14 @@ using System.Windows.Forms;
 
 namespace EventTasks
 {
-    public partial class events_task : Form
+    public partial class main_menu : Form
     {
         DateTime dt = DateTime.Now;
         int BetweenMonth = 0;
 
+        // 動的に追加するツール
         private Label[] CalendarDays;
-        public events_task()
+        public main_menu()
         {
             InitializeComponent();
             CalendarDays = new Label[42]; // 初期化コンストラクタ

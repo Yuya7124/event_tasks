@@ -16,7 +16,7 @@ namespace EventTasks
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new events_task());
+            Application.Run(new main_menu());
         }
     }
 }
