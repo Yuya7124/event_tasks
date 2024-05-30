@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Event_Tasks;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,10 +18,13 @@ namespace EventTasks
 
         // 動的に追加するツール
         private Label[] CalendarDays;
+
+        // アクセスページ
+        show_task_list show_task = new show_task_list(); 
         public main_menu()
         {
-            InitializeComponent();
             CalendarDays = new Label[42]; // 初期化コンストラクタ
+            InitializeComponent();
         }
 
         private void events_task_Load(object sender, EventArgs e)
@@ -132,7 +136,9 @@ namespace EventTasks
         }
         private void task_btn_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            show_task.ShowDialog();
+            this.Show();
         }
 
         private void event_btn_Click(object sender, EventArgs e)

@@ -1,8 +1,8 @@
 ﻿using System;
 
-public class Class1
+public class et_function
 {
-	public Class1()
+	public et_function()
 	{
 
 	}

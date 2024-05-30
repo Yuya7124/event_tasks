@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace Event_Tasks
 {
-    public partial class task_list : Form
+    public partial class edit_task_list : Form
     {
 
-        public task_list()
+        public edit_task_list()
         {
             InitializeComponent();
         }
@@ -25,6 +25,11 @@ namespace Event_Tasks
         private void set_task_btn_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void return_btn_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
