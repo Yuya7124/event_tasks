@@ -150,7 +150,7 @@
             this.consumable_btn.Cursor = System.Windows.Forms.Cursors.Default;
             this.consumable_btn.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.consumable_btn.ForeColor = System.Drawing.Color.DarkTurquoise;
-            this.consumable_btn.Image = global::Event_Tasks.Properties.Resources.段ボール箱1;
+            this.consumable_btn.Image = global::Event_Tasks.Properties.Resources.段ボール箱;
             this.consumable_btn.Location = new System.Drawing.Point(12, 165);
             this.consumable_btn.Name = "consumable_btn";
             this.consumable_btn.Size = new System.Drawing.Size(92, 66);
@@ -178,7 +178,7 @@
             // 
             this.task_btn.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.task_btn.ForeColor = System.Drawing.Color.DarkTurquoise;
-            this.task_btn.Image = global::Event_Tasks.Properties.Resources.メモアイコン1;
+            this.task_btn.Image = global::Event_Tasks.Properties.Resources.メモアイコン;
             this.task_btn.Location = new System.Drawing.Point(12, 22);
             this.task_btn.Name = "task_btn";
             this.task_btn.Size = new System.Drawing.Size(92, 66);

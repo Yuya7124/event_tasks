@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Reflection;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -36,6 +38,15 @@ namespace Event_Tasks
         {
             task_num++;
             AddToolList(task_num);
+        }
+
+        private void del_btn_Click(Object sender, EventArgs e)
+        {
+            Controls.Remove(TaskTitleTextBox[task_num]);
+            Controls.Remove(PriorityBox[task_num]);
+            Controls.Remove(DueDataBox[task_num]);
+            Controls.Remove(DelTaskButton[task_num]);
+            Controls.Remove(TaskNumLabel[task_num]);
         }
 
         private void return_btn_Click(object sender, EventArgs e)
@@ -123,5 +134,44 @@ namespace Event_Tasks
             Controls.Add(DelTaskButton[index]);
             Controls.Add(TaskNumLabel[index]);
         }
+
+        private void save_btn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                database_control();
+                MessageBox.Show("saved completion.");
+            }
+
+            catch (Exception ex) {
+                MessageBox.Show("An error occurred while saving tasks: " + ex.Message);
+            }
+        }
+
+        private void database_control()
+        {
+            string connectString = System.Configuration.ConfigurationManager.ConnectionStrings["EventTasksDB"].ConnectionString;
+
+            using (SqlConnection connection = new SqlConnection(connectString))
+            {
+                connection.Open();
+
+                for (int i = 0; i< task_num; i++)
+                {
+                    string query = "INSERT INTO [dbo].[task] (title, priority, dueDate) VALUES (@title, @priority, @dueDate)";
+                    using (SqlCommand cmd = new SqlCommand(query, connection))
+                    {
+                        // パラメータの追加
+                        // cmd.Parameters.AddWithValue("@user_id", user_id);
+                        cmd.Parameters.AddWithValue("@title", TaskTitleTextBox[i].Text);
+                        cmd.Parameters.AddWithValue("@priority", PriorityBox[i].Value);
+                        cmd.Parameters.AddWithValue("@dueDate", DueDataBox[i].Value);
+
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+            }
+
+        } 
     }
 }

@@ -105,6 +105,7 @@
             this.save_btn.TabIndex = 8;
             this.save_btn.Text = "保存";
             this.save_btn.UseVisualStyleBackColor = true;
+            this.save_btn.Click += new System.EventHandler(this.save_btn_Click);
             // 
             // return_btn
             // 

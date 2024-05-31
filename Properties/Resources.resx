@@ -124,17 +124,11 @@
   <data name="段ボール箱" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\image\段ボール箱.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="メモアイコン1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\image\メモアイコン.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="矢印(左)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\image\矢印(左).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="矢印(右)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\image\矢印(右).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="段ボール箱1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\image\段ボール箱.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="カレンダー" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\image\カレンダー.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

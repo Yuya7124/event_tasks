@@ -93,29 +93,9 @@ namespace Event_Tasks.Properties {
         /// <summary>
         ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
-        internal static System.Drawing.Bitmap メモアイコン1 {
-            get {
-                object obj = ResourceManager.GetObject("メモアイコン1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
         internal static System.Drawing.Bitmap 段ボール箱 {
             get {
                 object obj = ResourceManager.GetObject("段ボール箱", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap 段ボール箱1 {
-            get {
-                object obj = ResourceManager.GetObject("段ボール箱1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
