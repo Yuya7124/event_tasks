@@ -3,32 +3,35 @@
   "WorkspaceRootPath": "C:\\Users\\user\\source\\repos\\Event_Tasks\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1A9CB12D-5A37-45FC-BA40-EAF4D3BD9A24}|EventTasks.csproj|c:\\users\\user\\source\\repos\\event_tasks\\task_lists\\new_task_list.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1A9CB12D-5A37-45FC-BA40-EAF4D3BD9A24}|EventTasks.csproj|C:\\Users\\user\\source\\repos\\Event_Tasks\\task_lists\\new_task_list.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1A9CB12D-5A37-45FC-BA40-EAF4D3BD9A24}|EventTasks.csproj|solutionrelative:task_lists\\new_task_list.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1A9CB12D-5A37-45FC-BA40-EAF4D3BD9A24}|EventTasks.csproj|C:\\Users\\user\\source\\repos\\Event_Tasks\\main\\main_menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{1A9CB12D-5A37-45FC-BA40-EAF4D3BD9A24}|EventTasks.csproj|solutionrelative:main\\main_menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1A9CB12D-5A37-45FC-BA40-EAF4D3BD9A24}|EventTasks.csproj|C:\\Users\\user\\source\\repos\\Event_Tasks\\task_lists\\new_task_list.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{1A9CB12D-5A37-45FC-BA40-EAF4D3BD9A24}|EventTasks.csproj|solutionrelative:task_lists\\new_task_list.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1A9CB12D-5A37-45FC-BA40-EAF4D3BD9A24}|EventTasks.csproj|c:\\users\\user\\source\\repos\\event_tasks\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{1A9CB12D-5A37-45FC-BA40-EAF4D3BD9A24}|EventTasks.csproj|solutionrelative:app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1A9CB12D-5A37-45FC-BA40-EAF4D3BD9A24}|EventTasks.csproj|C:\\Users\\user\\source\\repos\\Event_Tasks\\task_lists\\show_task_list.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1A9CB12D-5A37-45FC-BA40-EAF4D3BD9A24}|EventTasks.csproj|solutionrelative:task_lists\\show_task_list.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1A9CB12D-5A37-45FC-BA40-EAF4D3BD9A24}|EventTasks.csproj|C:\\Users\\user\\source\\repos\\Event_Tasks\\main\\main_menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A9CB12D-5A37-45FC-BA40-EAF4D3BD9A24}|EventTasks.csproj|solutionrelative:main\\main_menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1A9CB12D-5A37-45FC-BA40-EAF4D3BD9A24}|EventTasks.csproj|C:\\Users\\user\\source\\repos\\Event_Tasks\\task_lists\\edit_task_list.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1A9CB12D-5A37-45FC-BA40-EAF4D3BD9A24}|EventTasks.csproj|solutionrelative:task_lists\\edit_task_list.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1A9CB12D-5A37-45FC-BA40-EAF4D3BD9A24}|EventTasks.csproj|C:\\Users\\user\\source\\repos\\Event_Tasks\\main\\main_menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1A9CB12D-5A37-45FC-BA40-EAF4D3BD9A24}|EventTasks.csproj|solutionrelative:main\\main_menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1A9CB12D-5A37-45FC-BA40-EAF4D3BD9A24}|EventTasks.csproj|C:\\Users\\user\\source\\repos\\Event_Tasks\\main\\main_menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{1A9CB12D-5A37-45FC-BA40-EAF4D3BD9A24}|EventTasks.csproj|solutionrelative:main\\main_menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1A9CB12D-5A37-45FC-BA40-EAF4D3BD9A24}|EventTasks.csproj|C:\\Users\\user\\source\\repos\\Event_Tasks\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{1A9CB12D-5A37-45FC-BA40-EAF4D3BD9A24}|EventTasks.csproj|solutionrelative:app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00000000-0000-0000-0000-000000000000}|\u003CSolution\u003E|EventTasksDB||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1A9CB12D-5A37-45FC-BA40-EAF4D3BD9A24}|EventTasks.csproj|C:\\Users\\user\\source\\repos\\Event_Tasks\\task_lists\\new_task_list.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{1A9CB12D-5A37-45FC-BA40-EAF4D3BD9A24}|EventTasks.csproj|solutionrelative:task_lists\\new_task_list.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1A9CB12D-5A37-45FC-BA40-EAF4D3BD9A24}|EventTasks.csproj|C:\\Users\\user\\source\\repos\\Event_Tasks\\task_lists\\show_task_list.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A9CB12D-5A37-45FC-BA40-EAF4D3BD9A24}|EventTasks.csproj|solutionrelative:task_lists\\show_task_list.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1A9CB12D-5A37-45FC-BA40-EAF4D3BD9A24}|EventTasks.csproj|C:\\Users\\user\\source\\repos\\Event_Tasks\\task_lists\\edit_task_list.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
@@ -37,6 +40,9 @@
     {
       "AbsoluteMoniker": "D:0:0:{1A9CB12D-5A37-45FC-BA40-EAF4D3BD9A24}|EventTasks.csproj|C:\\Users\\user\\source\\repos\\Event_Tasks\\task_lists\\show_task_list.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{1A9CB12D-5A37-45FC-BA40-EAF4D3BD9A24}|EventTasks.csproj|solutionrelative:task_lists\\show_task_list.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C844A782-BA53-415B-BC1C-5101A4605C75}|..\\EventTasksDB\\EventTasksDB.sqlproj|C:\\Users\\user\\source\\repos\\EventTasksDB\\EventTasksDB.sqlproj||{B270807C-D8C6-49EB-8EBE-8E8D566637A1}|00106176-fa71-458f-a7ba-edf89df82ad3"
     }
   ],
   "DocumentGroupContainers": [
@@ -46,8 +52,20 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "EventTasksDB",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\EventTasksDB\\EventTasksDB.sqlproj",
+              "RelativeDocumentMoniker": "..\\EventTasksDB\\EventTasksDB.sqlproj",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\EventTasksDB\\EventTasksDB.sqlproj",
+              "RelativeToolTip": "..\\EventTasksDB\\EventTasksDB.sqlproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-06-03T07:49:35.635Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -56,27 +74,27 @@
               "RelativeDocumentMoniker": "task_lists\\new_task_list.cs",
               "ToolTip": "C:\\Users\\user\\source\\repos\\Event_Tasks\\task_lists\\new_task_list.cs",
               "RelativeToolTip": "task_lists\\new_task_list.cs",
-              "ViewState": "AQIAACIAAAAAAAAAAAAiwCcAAAAiAAAA",
+              "ViewState": "AQIAAI8AAAAAAAAAAAAqwJIAAAAiAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-29T06:06:49.227Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "App.config",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\Event_Tasks\\App.config",
               "RelativeDocumentMoniker": "App.config",
               "ToolTip": "C:\\Users\\user\\source\\repos\\Event_Tasks\\App.config",
               "RelativeToolTip": "App.config",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAQAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAYAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
               "WhenOpened": "2024-05-31T05:06:26.621Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 1,
               "Title": "main_menu.cs",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\Event_Tasks\\main\\main_menu.cs",
               "RelativeDocumentMoniker": "main\\main_menu.cs",
@@ -89,7 +107,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "main_menu.cs [\u30C7\u30B6\u30A4\u30F3]",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\Event_Tasks\\main\\main_menu.cs",
               "RelativeDocumentMoniker": "main\\main_menu.cs",
@@ -101,20 +119,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 2,
               "Title": "edit_task_list.cs",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\Event_Tasks\\task_lists\\edit_task_list.cs",
               "RelativeDocumentMoniker": "task_lists\\edit_task_list.cs",
               "ToolTip": "C:\\Users\\user\\source\\repos\\Event_Tasks\\task_lists\\edit_task_list.cs",
               "RelativeToolTip": "task_lists\\edit_task_list.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAABUAAAAAAAAA",
+              "ViewState": "AQIAABUAAAAAAAAAAAAowBUAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-30T02:22:13.878Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 7,
               "Title": "show_task_list.cs",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\Event_Tasks\\task_lists\\show_task_list.cs",
               "RelativeDocumentMoniker": "task_lists\\show_task_list.cs",
@@ -122,36 +140,33 @@
               "RelativeToolTip": "task_lists\\show_task_list.cs",
               "ViewState": "AQIAABgAAAAAAAAAAAAowBIAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-30T02:08:57.984Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-30T02:08:57.984Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 6,
               "Title": "new_task_list.cs [\u30C7\u30B6\u30A4\u30F3]",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\Event_Tasks\\task_lists\\new_task_list.cs",
               "RelativeDocumentMoniker": "task_lists\\new_task_list.cs",
               "ToolTip": "C:\\Users\\user\\source\\repos\\Event_Tasks\\task_lists\\new_task_list.cs [\u30C7\u30B6\u30A4\u30F3]",
               "RelativeToolTip": "task_lists\\new_task_list.cs [\u30C7\u30B6\u30A4\u30F3]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-30T01:57:40.293Z",
-              "EditorCaption": " [\u30C7\u30B6\u30A4\u30F3]"
+              "WhenOpened": "2024-05-30T01:57:40.293Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "show_task_list.cs [\u30C7\u30B6\u30A4\u30F3]",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\Event_Tasks\\task_lists\\show_task_list.cs",
               "RelativeDocumentMoniker": "task_lists\\show_task_list.cs",
               "ToolTip": "C:\\Users\\user\\source\\repos\\Event_Tasks\\task_lists\\show_task_list.cs [\u30C7\u30B6\u30A4\u30F3]",
               "RelativeToolTip": "task_lists\\show_task_list.cs [\u30C7\u30B6\u30A4\u30F3]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-30T01:55:21.836Z",
-              "EditorCaption": " [\u30C7\u30B6\u30A4\u30F3]"
+              "WhenOpened": "2024-05-30T01:55:21.836Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "edit_task_list.cs [\u30C7\u30B6\u30A4\u30F3]",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\Event_Tasks\\task_lists\\edit_task_list.cs",
               "RelativeDocumentMoniker": "task_lists\\edit_task_list.cs",

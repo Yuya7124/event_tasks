@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Text;
@@ -52,7 +53,7 @@ namespace Event_Tasks
         private void return_btn_Click(object sender, EventArgs e)
         {
             // Controlsで削除
-            for (int i = 0; i <= task_num; i++) 
+            for (int i = 0; i <= task_num; i++)
             {
                 Controls.Remove(TaskTitleTextBox[i]);
                 Controls.Remove(PriorityBox[i]);
@@ -150,28 +151,52 @@ namespace Event_Tasks
 
         private void database_control()
         {
-            string connectString = System.Configuration.ConfigurationManager.ConnectionStrings["EventTasksDB"].ConnectionString;
+            string connectString = "Data Source=localhost;Initial Catalog=master;User ID=user;Password=nanka0123";
+
 
             using (SqlConnection connection = new SqlConnection(connectString))
             {
-                connection.Open();
-
-                for (int i = 0; i< task_num; i++)
+                try
                 {
-                    string query = "INSERT INTO [dbo].[task] (title, priority, dueDate) VALUES (@title, @priority, @dueDate)";
-                    using (SqlCommand cmd = new SqlCommand(query, connection))
-                    {
-                        // パラメータの追加
-                        // cmd.Parameters.AddWithValue("@user_id", user_id);
-                        cmd.Parameters.AddWithValue("@title", TaskTitleTextBox[i].Text);
-                        cmd.Parameters.AddWithValue("@priority", PriorityBox[i].Value);
-                        cmd.Parameters.AddWithValue("@dueDate", DueDataBox[i].Value);
+                    // データベース接続開始
+                    connection.Open();
 
-                        cmd.ExecuteNonQuery();
+                    for (int i = 0; i < task_num; i++)
+                    {
+                        var query = String.Format("INSERT INTO [dbo].[task] (title, priority, dueDate) VALUES ('{0}','{1}','{2}')", TaskTitleTextBox[i].Text, PriorityBox[i].Value, DueDataBox[i].Value);
+                        using (var transaction = connection.BeginTransaction())
+                        using (SqlCommand cmd = new SqlCommand() { Connection = connection, Transaction = transaction })
+                        {
+                            // データベースコマンドセット
+                            try
+                            {
+                                // コマンドセット
+                                cmd.CommandText = query;
+                                // コマンド実行
+                                cmd.ExecuteNonQuery();
+                                // コミット
+                                transaction.Commit();
+                            }
+                            catch
+                            {
+                                // ロールバック
+                                transaction.Rollback();
+                                throw;
+                            }
+                        }
                     }
                 }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                    throw;
+                }
+                finally
+                { 
+                    // データベース接続終了
+                    connection.Close();
+                }
             }
-
-        } 
+        }
     }
 }
