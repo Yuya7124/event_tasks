@@ -151,7 +151,7 @@ namespace Event_Tasks
 
         private void database_control()
         {
-            string connectString = "Data Source=localhost;Initial Catalog=master;User ID=user;Password=nanka0123";
+            string connectString = "Data Source=WIN-DN6B589V2SO\\SQLEXPRESS;Integrated Security=True;Connect Timeout=30;Encrypt=True;Trust Server Certificate=True;Application Intent=ReadWrite;Multi Subnet Failover=False";
 
 
             using (SqlConnection connection = new SqlConnection(connectString))
