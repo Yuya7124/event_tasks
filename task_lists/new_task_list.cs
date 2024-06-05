@@ -24,6 +24,7 @@ namespace Event_Tasks
         private List<Label> TaskNumLabel = new List<Label>();
 
         int task_num = 0;
+        int userId = 1; // 例: ユーザーIDを設定
 
         public new_task_list()
         {
@@ -52,25 +53,7 @@ namespace Event_Tasks
 
         private void return_btn_Click(object sender, EventArgs e)
         {
-            // Controlsで削除
-            for (int i = 0; i <= task_num; i++)
-            {
-                Controls.Remove(TaskTitleTextBox[i]);
-                Controls.Remove(PriorityBox[i]);
-                Controls.Remove(DueDataBox[i]);
-                Controls.Remove(DelTaskButton[i]);
-                Controls.Remove(TaskNumLabel[i]);
-            }
-
-            // Listをリセット
-            TaskNumLabel.Clear();
-            TaskTitleTextBox.Clear();
-            PriorityBox.Clear();
-            DueDataBox.Clear();
-            DelTaskButton.Clear();
-
-            task_num = 0;
-            this.Close();
+            reset_tool();
         }
 
         // ツール配列のスタイル
@@ -140,8 +123,13 @@ namespace Event_Tasks
         {
             try
             {
-                database_control();
+                for (int i = 0; i < task_num + 1; i++) 
+                {
+                    database_insert(1, TaskTitleTextBox[i].Text, DueDataBox[i].Value, (int)PriorityBox[i].Value);
+                }
                 MessageBox.Show("saved completion.");
+                reset_tool();
+                this.Close();
             }
 
             catch (Exception ex) {
@@ -149,10 +137,32 @@ namespace Event_Tasks
             }
         }
 
-        private void database_control()
+        private void reset_tool()
         {
-            string connectString = "Data Source=WIN-DN6B589V2SO\\SQLEXPRESS;Integrated Security=True;Connect Timeout=30;Encrypt=True;Trust Server Certificate=True;Application Intent=ReadWrite;Multi Subnet Failover=False";
+            // Controlsで削除
+            for (int i = 0; i <= task_num; i++)
+            {
+                Controls.Remove(TaskTitleTextBox[i]);
+                Controls.Remove(PriorityBox[i]);
+                Controls.Remove(DueDataBox[i]);
+                Controls.Remove(DelTaskButton[i]);
+                Controls.Remove(TaskNumLabel[i]);
+            }
 
+            // Listをリセット
+            TaskNumLabel.Clear();
+            TaskTitleTextBox.Clear();
+            PriorityBox.Clear();
+            DueDataBox.Clear();
+            DelTaskButton.Clear();
+
+            task_num = 0;
+            this.Close();
+        }
+
+        private void database_insert(int user_id, string task_title, DateTime due_data, int task_priority)
+        {
+            string connectString = "Data Source=WIN-DN6B589V2SO\\SQLEXPRESS;Integrated Security=True;Connect Timeout=30;Encrypt=False;";
 
             using (SqlConnection connection = new SqlConnection(connectString))
             {
@@ -161,17 +171,25 @@ namespace Event_Tasks
                     // データベース接続開始
                     connection.Open();
 
-                    for (int i = 0; i < task_num; i++)
+                    for (int i = 0; i < task_num + 1; i++)
                     {
-                        var query = String.Format("INSERT INTO [dbo].[task] (title, priority, dueDate) VALUES ('{0}','{1}','{2}')", TaskTitleTextBox[i].Text, PriorityBox[i].Value, DueDataBox[i].Value);
+                        var query = "INSERT INTO event_tasks.dbo.task (user_id, task_title, due_date, task_priority)"
+                                  + "VALUES (@user_id, @task_title, @due_date, @task_priority);" 
+                                  + "SELECT CAST(SCOPE_IDENTITY() AS int);";
+
                         using (var transaction = connection.BeginTransaction())
-                        using (SqlCommand cmd = new SqlCommand() { Connection = connection, Transaction = transaction })
+                        using (SqlCommand cmd = new SqlCommand(query) { Connection = connection, Transaction = transaction })
                         {
+                            var id = (int)cmd.ExecuteScalar();
                             // データベースコマンドセット
                             try
                             {
                                 // コマンドセット
                                 cmd.CommandText = query;
+                                cmd.Parameters.Add(new SqlParameter("@user_id", user_id));
+                                cmd.Parameters.Add(new SqlParameter("@task_title", task_title));
+                                cmd.Parameters.Add(new SqlParameter("@due_date", due_data));
+                                cmd.Parameters.Add(new SqlParameter("@task_priority", task_priority));
                                 // コマンド実行
                                 cmd.ExecuteNonQuery();
                                 // コミット

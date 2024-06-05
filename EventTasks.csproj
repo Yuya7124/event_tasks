@@ -88,6 +88,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="task_lists\tasks_db.cs" />
     <EmbeddedResource Include="main\main_menu.resx">
       <DependentUpon>main_menu.cs</DependentUpon>
     </EmbeddedResource>
