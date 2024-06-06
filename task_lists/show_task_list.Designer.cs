@@ -35,12 +35,7 @@
             this.set_task_btn = new System.Windows.Forms.Button();
             this.edit_btn = new System.Windows.Forms.Button();
             this.return_btn = new System.Windows.Forms.Button();
-            this.del_task_btn0 = new System.Windows.Forms.Button();
-            this.task_num = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // task_title_label
@@ -124,28 +119,6 @@
             this.return_btn.UseVisualStyleBackColor = true;
             this.return_btn.Click += new System.EventHandler(this.return_btn_Click);
             // 
-            // del_task_btn0
-            // 
-            this.del_task_btn0.BackColor = System.Drawing.Color.Red;
-            this.del_task_btn0.Cursor = System.Windows.Forms.Cursors.Default;
-            this.del_task_btn0.ForeColor = System.Drawing.SystemColors.Control;
-            this.del_task_btn0.Location = new System.Drawing.Point(540, 70);
-            this.del_task_btn0.Name = "del_task_btn0";
-            this.del_task_btn0.Size = new System.Drawing.Size(21, 21);
-            this.del_task_btn0.TabIndex = 14;
-            this.del_task_btn0.Text = "✔️";
-            this.del_task_btn0.UseVisualStyleBackColor = false;
-            // 
-            // task_num
-            // 
-            this.task_num.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.task_num.Location = new System.Drawing.Point(25, 70);
-            this.task_num.Name = "task_num";
-            this.task_num.Size = new System.Drawing.Size(21, 21);
-            this.task_num.TabIndex = 15;
-            this.task_num.Text = "1";
-            this.task_num.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -155,47 +128,12 @@
             this.label1.TabIndex = 16;
             this.label1.Text = "完了ボタン";
             // 
-            // label2
-            // 
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(50, 70);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(300, 20);
-            this.label2.TabIndex = 17;
-            this.label2.Text = "TaskTitle01";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label3
-            // 
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(350, 70);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(100, 20);
-            this.label3.TabIndex = 18;
-            this.label3.Text = "yyyy/mm.dd";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label4
-            // 
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(450, 70);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(70, 20);
-            this.label4.TabIndex = 19;
-            this.label4.Text = "1";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // show_task_list
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(591, 461);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.task_num);
-            this.Controls.Add(this.del_task_btn0);
             this.Controls.Add(this.return_btn);
             this.Controls.Add(this.edit_btn);
             this.Controls.Add(this.set_task_btn);
@@ -203,6 +141,8 @@
             this.Controls.Add(this.priority_label);
             this.Controls.Add(this.due_day_label);
             this.Controls.Add(this.task_title_label);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "show_task_list";
             this.Text = "Task Lists";
             this.Load += new System.EventHandler(this.task_list_Load);
@@ -219,11 +159,6 @@
         private System.Windows.Forms.Button set_task_btn;
         private System.Windows.Forms.Button edit_btn;
         private System.Windows.Forms.Button return_btn;
-        private System.Windows.Forms.Button del_task_btn0;
-        private System.Windows.Forms.Label task_num;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
     }
 }

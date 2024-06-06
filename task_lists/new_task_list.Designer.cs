@@ -130,6 +130,8 @@
             this.Controls.Add(this.priority_label);
             this.Controls.Add(this.due_day_label);
             this.Controls.Add(this.task_title_label);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "new_task_list";
             this.Text = "Task Lists";
             this.Load += new System.EventHandler(this.task_list_Load);

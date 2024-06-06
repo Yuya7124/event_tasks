@@ -24,7 +24,6 @@ namespace Event_Tasks
         private List<Label> TaskNumLabel = new List<Label>();
 
         int task_num = 0;
-        int userId = 1; // 例: ユーザーIDを設定
 
         public new_task_list()
         {
@@ -173,14 +172,22 @@ namespace Event_Tasks
 
                     for (int i = 0; i < task_num + 1; i++)
                     {
-                        var query = "INSERT INTO event_tasks.dbo.task (user_id, task_title, due_date, task_priority)"
-                                  + "VALUES (@user_id, @task_title, @due_date, @task_priority);" 
-                                  + "SELECT CAST(SCOPE_IDENTITY() AS int);";
+                        var query_set = string.Format("SET @user_id = {0};", 1) +
+                                        string.Format("SET @task_title ='{0}';", TaskTitleTextBox[i].Text) +
+                                        string.Format("SET @due_date ='{0}';", DueDataBox[i].Value.ToString("yyyy-MM-dd")) +
+                                        string.Format("SET @task_priority = {0};", PriorityBox[i].Value);
+
+                        var query_insert = "INSERT INTO event_tasks.dbo.task(user_id, task_title, due_date, task_priority)" +
+                                           "VALUES(@user_id, @task_title, @due_date, @task_priority);";
+
+                        var query = query_set + query_insert;
+
+                        var id_query = "SELECT CAST(SCOPE_IDENTITY() AS int);";
 
                         using (var transaction = connection.BeginTransaction())
                         using (SqlCommand cmd = new SqlCommand(query) { Connection = connection, Transaction = transaction })
                         {
-                            var id = (int)cmd.ExecuteScalar();
+                            var id = id_query;
                             // データベースコマンドセット
                             try
                             {
