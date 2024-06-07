@@ -23,6 +23,7 @@ namespace Event_Tasks
         private List<Button> DelTaskButton = new List<Button>();
         private List<Label> TaskNumLabel = new List<Label>();
 
+
         int task_num = 0;
 
         public new_task_list()

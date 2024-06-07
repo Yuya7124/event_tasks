@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -20,7 +21,8 @@ namespace EventTasks
         private Label[] CalendarDays;
 
         // アクセスページ
-        show_task_list show_task = new show_task_list(); 
+        show_task_list show_task = new show_task_list();
+        new_task_list new_task = new new_task_list();
         public main_menu()
         {
             CalendarDays = new Label[42]; // 初期化コンストラクタ
@@ -54,7 +56,7 @@ namespace EventTasks
         {
             DateTime firstday = new DateTime(view_month.Year, view_month.Month, 1);
             int firstday_week = (int)firstday.DayOfWeek;
-
+            
             for (int i = 0; i < 42; i++)
             {
                 if (CalendarDays[i] != null)
@@ -67,19 +69,40 @@ namespace EventTasks
             for (int i = 0; i < 42; i++)
             {
                 DateTime currentDay = firstday.AddDays(i - firstday_week);
+                string due_day_list = DaySelectTaskDB(currentDay.ToString());
                 // カレンダーのデフォルト設定
-                CalendarDays[i] = new Label
+                if (currentDay.ToString() == due_day_list)
                 {
-                    Name = "day_label" + (i + 1),
-                    Text = currentDay.Day.ToString("d"),
-                    AutoSize = false,
-                    Font = new Font("Century Gothic", 12.00F, FontStyle.Regular, GraphicsUnit.Point, 0),
-                    ForeColor = SystemColors.ControlText,
-                    BackColor = Color.Transparent,
-                    BorderStyle = BorderStyle.FixedSingle,
-                    Size = new Size(80, 60),
-                    Location = new Point(110 + 80 * (i % 7), 80 + 60 * (i / 7))
-                };
+                    CalendarDays[i] = new LinkLabel
+                    {
+                        Name = "day_label" + (i + 1),
+                        Text = currentDay.Day.ToString("d"),
+                        Font = new Font("Century Gothic", 15.00F, FontStyle.Bold, GraphicsUnit.Point, 0),
+                        ActiveLinkColor = Color.DarkOrange,
+                        ForeColor = Color.DarkBlue,
+                        BackColor = Color.Transparent,
+                        BorderStyle = BorderStyle.FixedSingle,
+                        Size = new Size(80, 60),
+                        Location = new Point(110 + 80 * (i % 7), 80 + 60 * (i / 7)),
+                        LinkVisited = false
+                        
+                    };
+                }
+                else
+                {
+                    CalendarDays[i] = new Label
+                    {
+                        Name = "day_label" + (i + 1),
+                        Text = currentDay.Day.ToString("d"),
+                        AutoSize = false,
+                        Font = new Font("Century Gothic", 12.00F, FontStyle.Regular, GraphicsUnit.Point, 0),
+                        ForeColor = SystemColors.ControlText,
+                        BackColor = Color.Transparent,
+                        BorderStyle = BorderStyle.FixedSingle,
+                        Size = new Size(80, 60),
+                        Location = new Point(110 + 80 * (i % 7), 80 + 60 * (i / 7)),
+                    };
+                }
 
                 // 曜日ごとのテキストカラーの色付け
                 // 表示月であるとき
@@ -137,7 +160,7 @@ namespace EventTasks
         private void task_btn_Click(object sender, EventArgs e)
         {
             this.Hide();
-            show_task.ShowDialog();
+            new_task.ShowDialog();
             this.Show();
         }
 
@@ -149,6 +172,53 @@ namespace EventTasks
         private void consumable_btn_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private string DaySelectTaskDB(string dayFormat)
+        {
+            string connectString = "Data Source=WIN-DN6B589V2SO\\SQLEXPRESS;Integrated Security=True;Connect Timeout=30;Encrypt=False;";
+            string due_day = "";
+
+            using (SqlConnection connection = new SqlConnection(connectString))
+            {
+                try
+                {
+                    // データベース接続開始
+                    connection.Open();
+                    var query = "SELECT user_id, task_title, due_date, task_priority " +
+                                "FROM event_tasks.dbo.task " +
+                                "WHERE user_id = 1 " +
+                                string.Format("AND due_date = '{0}'", dayFormat);
+
+                    var count_query = "SELECT COUNT(*) " +
+                                      "FROM event_tasks.dbo.task " +
+                                      "WHERE user_id = 1 " +
+                                      string.Format("AND due_date = '{0}'", dayFormat);
+
+                    SqlCommand count_cmd = new SqlCommand(count_query, connection);
+                    
+                    SqlCommand cmd = new SqlCommand(query, connection);
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        // データの取得
+                        while (reader.Read())
+                        {
+                            due_day = reader["due_date"].ToString();
+                            Console.WriteLine($"{reader["task_title"]}, {reader["due_date"]}, {reader["task_priority"]}");
+                            
+                        }
+                    }
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.ToString());
+                }
+                finally
+                {
+                    connection.Close();
+                }
+            }
+            return due_day;
         }
     }
 }

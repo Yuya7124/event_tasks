@@ -42,6 +42,7 @@
             this.task_btn = new System.Windows.Forms.Button();
             this.next_btn = new System.Windows.Forms.Button();
             this.prev_btn = new System.Windows.Forms.Button();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // sum_label
@@ -125,7 +126,7 @@
             // 
             this.monthly.AutoSize = true;
             this.monthly.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.monthly.Location = new System.Drawing.Point(149, 14);
+            this.monthly.Location = new System.Drawing.Point(148, 14);
             this.monthly.Name = "monthly";
             this.monthly.Size = new System.Drawing.Size(134, 39);
             this.monthly.TabIndex = 85;
@@ -137,7 +138,7 @@
             this.present_month_btn.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.present_month_btn.ForeColor = System.Drawing.Color.DarkTurquoise;
             this.present_month_btn.Image = global::Event_Tasks.Properties.Resources.カレンダー_小_;
-            this.present_month_btn.Location = new System.Drawing.Point(353, 20);
+            this.present_month_btn.Location = new System.Drawing.Point(352, 21);
             this.present_month_btn.Name = "present_month_btn";
             this.present_month_btn.Size = new System.Drawing.Size(32, 32);
             this.present_month_btn.TabIndex = 91;
@@ -192,7 +193,7 @@
             // 
             this.next_btn.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.next_btn.Image = global::Event_Tasks.Properties.Resources.矢印_右_;
-            this.next_btn.Location = new System.Drawing.Point(289, 22);
+            this.next_btn.Location = new System.Drawing.Point(290, 22);
             this.next_btn.Name = "next_btn";
             this.next_btn.Size = new System.Drawing.Size(30, 28);
             this.next_btn.TabIndex = 87;
@@ -203,18 +204,30 @@
             // 
             this.prev_btn.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.prev_btn.Image = global::Event_Tasks.Properties.Resources.矢印_左_;
-            this.prev_btn.Location = new System.Drawing.Point(113, 22);
+            this.prev_btn.Location = new System.Drawing.Point(112, 22);
             this.prev_btn.Name = "prev_btn";
             this.prev_btn.Size = new System.Drawing.Size(30, 28);
             this.prev_btn.TabIndex = 86;
             this.prev_btn.UseVisualStyleBackColor = true;
             this.prev_btn.Click += new System.EventHandler(this.prev_btn_Click);
             // 
-            // events_task
+            // linkLabel1
+            // 
+            this.linkLabel1.ActiveLinkColor = System.Drawing.Color.DarkOrange;
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.linkLabel1.LinkColor = System.Drawing.Color.DarkBlue;
+            this.linkLabel1.Location = new System.Drawing.Point(39, 270);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(0, 11);
+            this.linkLabel1.TabIndex = 92;
+            // 
+            // main_menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 11F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(684, 461);
+            this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.present_month_btn);
             this.Controls.Add(this.consumable_btn);
             this.Controls.Add(this.event_btn);
@@ -233,7 +246,7 @@
             this.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "events_task";
+            this.Name = "main_menu";
             this.Text = "Event Tasks";
             this.Load += new System.EventHandler(this.events_task_Load);
             this.ResumeLayout(false);
@@ -256,6 +269,7 @@
         private System.Windows.Forms.Button event_btn;
         private System.Windows.Forms.Button consumable_btn;
         private System.Windows.Forms.Button present_month_btn;
+        private System.Windows.Forms.LinkLabel linkLabel1;
     }
 }
 

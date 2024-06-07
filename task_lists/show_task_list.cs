@@ -72,7 +72,9 @@ namespace Event_Tasks
                 {
                     // データベース接続開始
                     connection.Open();
-                    var query = "SELECT user_id, task_title, due_date, task_priority FROM event_tasks.dbo.task WHERE user_id = 1";
+                    var query = "SELECT user_id, task_title, due_date, task_priority " +
+                                "FROM event_tasks.dbo.task " +
+                                "WHERE user_id = 1";
 
                     var count_query = "SELECT COUNT(*) " +
                                       "FROM event_tasks.dbo.task " +
@@ -90,7 +92,7 @@ namespace Event_Tasks
                             TaskTitle.Add(reader["task_title"] as string);
                             TaskDueDate.Add(reader["due_date"].ToString());
                             TaskPriority.Add(reader["task_priority"].ToString());
-                            Console.WriteLine($"{reader["task_title"]} - {reader["due_date"]} - {reader["task_priority"]}");
+                            Console.WriteLine($"{reader["task_title"]}, {reader["due_date"]}, {reader["task_priority"]}");
                         }
                     }
                 }
