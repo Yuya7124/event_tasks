@@ -21,8 +21,8 @@ namespace EventTasks
         private Label[] CalendarDays;
 
         // アクセスページ
-        show_task_list show_task = new show_task_list();
         new_task_list new_task = new new_task_list();
+
         public main_menu()
         {
             CalendarDays = new Label[42]; // 初期化コンストラクタ
@@ -52,6 +52,7 @@ namespace EventTasks
             edit_calendar(next_month);
         }
 
+        // カレンダー生成
         private void edit_calendar(DateTime view_month)
         {
             DateTime firstday = new DateTime(view_month.Year, view_month.Month, 1);
@@ -84,9 +85,10 @@ namespace EventTasks
                         BorderStyle = BorderStyle.FixedSingle,
                         Size = new Size(80, 60),
                         Location = new Point(110 + 80 * (i % 7), 80 + 60 * (i / 7)),
-                        LinkVisited = false
-                        
+                        LinkVisited = false,
+                        Tag = i
                     };
+                    CalendarDays[i].Click += new EventHandler(CalendarDays_Click);
                 }
                 else
                 {
@@ -150,6 +152,30 @@ namespace EventTasks
             }
         }
 
+        private void CalendarDays_Click(object sender, EventArgs e)
+        {
+            LinkLabel clickedLabel = sender as LinkLabel;
+            if (clickedLabel != null)
+            {
+                // Tagから日付を取得
+                DateTime[] dates = clickedLabel.Tag as DateTime[];
+                if (dates != null)
+                {
+                    foreach (DateTime date in dates)
+                    {
+                        DaySelectTaskDB(dates.ToString());
+                        Console.WriteLine(date.ToString("yyyy-MM-dd"));
+                    }
+                }
+                /*
+                show_task_list show_task = new show_task_list(clickedLabel.Text, dates);
+                this.Hide();
+                show_task.ShowDialog();
+                this.Show();
+                */
+            }
+        }
+
         private void present_month_btn_Click(object sender, EventArgs e)
         {
             BetweenMonth = 0;
@@ -174,7 +200,7 @@ namespace EventTasks
 
         }
 
-        private string DaySelectTaskDB(string dayFormat)
+        public string DaySelectTaskDB(string dayFormat)
         {
             string connectString = "Data Source=WIN-DN6B589V2SO\\SQLEXPRESS;Integrated Security=True;Connect Timeout=30;Encrypt=False;";
             string due_day = "";

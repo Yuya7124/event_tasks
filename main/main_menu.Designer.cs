@@ -42,7 +42,6 @@
             this.task_btn = new System.Windows.Forms.Button();
             this.next_btn = new System.Windows.Forms.Button();
             this.prev_btn = new System.Windows.Forms.Button();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // sum_label
@@ -211,23 +210,11 @@
             this.prev_btn.UseVisualStyleBackColor = true;
             this.prev_btn.Click += new System.EventHandler(this.prev_btn_Click);
             // 
-            // linkLabel1
-            // 
-            this.linkLabel1.ActiveLinkColor = System.Drawing.Color.DarkOrange;
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.linkLabel1.LinkColor = System.Drawing.Color.DarkBlue;
-            this.linkLabel1.Location = new System.Drawing.Point(39, 270);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(0, 11);
-            this.linkLabel1.TabIndex = 92;
-            // 
             // main_menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 11F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(684, 461);
-            this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.present_month_btn);
             this.Controls.Add(this.consumable_btn);
             this.Controls.Add(this.event_btn);
@@ -269,7 +256,6 @@
         private System.Windows.Forms.Button event_btn;
         private System.Windows.Forms.Button consumable_btn;
         private System.Windows.Forms.Button present_month_btn;
-        private System.Windows.Forms.LinkLabel linkLabel1;
     }
 }
 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EventTasks;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Configuration;
@@ -11,11 +12,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace Event_Tasks
 {
     public partial class show_task_list : Form
     {
         // アクセスページ
+        main_menu menu = new main_menu();
         new_task_list new_task = new new_task_list();
         edit_task_list edit_task = new edit_task_list();
 
@@ -33,13 +36,16 @@ namespace Event_Tasks
 
         int show_task_num = 0;
 
-        public show_task_list()
+        public show_task_list(string text, DateTime[] dates)
         {
             InitializeComponent();
+
+
         }
         private void task_list_Load(object sender, EventArgs e)
         {
             database_select();
+            menu.DaySelectTaskDB("3");
             label_set();
         }
 
@@ -74,7 +80,7 @@ namespace Event_Tasks
                     connection.Open();
                     var query = "SELECT user_id, task_title, due_date, task_priority " +
                                 "FROM event_tasks.dbo.task " +
-                                "WHERE user_id = 1";
+                                "WHERE user_id = 1 AND ";
 
                     var count_query = "SELECT COUNT(*) " +
                                       "FROM event_tasks.dbo.task " +
