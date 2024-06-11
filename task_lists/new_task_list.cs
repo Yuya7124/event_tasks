@@ -8,6 +8,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
 using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices.ComTypes;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -42,18 +43,72 @@ namespace Event_Tasks
             AddToolList(task_num);
         }
 
-        private void del_btn_Click(Object sender, EventArgs e)
+        private void del_task_btn_Click(Object sender, EventArgs e)
         {
-            Controls.Remove(TaskTitleTextBox[task_num]);
-            Controls.Remove(PriorityBox[task_num]);
-            Controls.Remove(DueDataBox[task_num]);
-            Controls.Remove(DelTaskButton[task_num]);
-            Controls.Remove(TaskNumLabel[task_num]);
+            string tmp_title = "";
+            DateTime tmp_due = DateTime.Now;
+            int tmp_priority = 1;
+
+            int index = getArrayIndex(sender);
+
+            // 2つ以上の時
+            if (index > -1)
+            {
+                TaskTitleTextBox[index].Text = "";
+                PriorityBox[index].Value = 1;
+                DueDataBox[index].Value = DateTime.Now;
+
+                // 削除する行を一番後ろへ
+                for (int i = index; i < task_num; i++)
+                {
+                    TaskTitleTextBox[i].Text = TaskTitleTextBox[i + 1].Text;
+                    TaskTitleTextBox[i + 1].Text = tmp_title;
+                    tmp_title = TaskTitleTextBox[i].Text;
+
+                    PriorityBox[i].Value = PriorityBox[i + 1].Value;
+                    PriorityBox[i + 1].Value = tmp_priority;
+                    tmp_priority = (int)PriorityBox[i].Value;
+
+                    DueDataBox[i].Value = DueDataBox[i + 1].Value;
+                    DueDataBox[i + 1].Value = tmp_due;
+                    tmp_due = DueDataBox[i].Value;
+                }
+            }
+
+            // 1つの状態で削除ボタンを押したとき
+            if (task_num >= -1)
+            {
+                TaskTitleTextBox[task_num].Text = "";
+                PriorityBox[task_num].Value = 1;
+                DueDataBox[task_num].Value = DateTime.Now;
+
+                Controls.Remove(TaskTitleTextBox[task_num]);
+                Controls.Remove(PriorityBox[task_num]);
+                Controls.Remove(DueDataBox[task_num]);
+                Controls.Remove(DelTaskButton[task_num]);
+                Controls.Remove(TaskNumLabel[task_num]);
+                task_num--;
+            }
         }
 
         private void return_btn_Click(object sender, EventArgs e)
         {
             reset_tool();
+        }
+        
+        // 配列番号の取得
+        private int getArrayIndex(object sender)
+        {
+            int ary_index = -1;
+            for (int i = 0; i < task_num; i++)
+            {
+                if (DelTaskButton[i].Equals(sender))
+                {
+                    ary_index = i;
+                    break;
+                }
+            }
+            return ary_index;
         }
 
         // ツール配列のスタイル
@@ -108,8 +163,9 @@ namespace Event_Tasks
                 Name = "del_task_btn" + index,
                 Size = new Size(21, 21),
                 Text = "➖",
-                UseVisualStyleBackColor = false,
+                UseVisualStyleBackColor = false
             });
+            DelTaskButton[index].Click += new EventHandler(del_task_btn_Click);
 
             // Controlsに追加
             Controls.Add(TaskTitleTextBox[index]);
