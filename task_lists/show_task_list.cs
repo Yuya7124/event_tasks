@@ -18,9 +18,9 @@ namespace Event_Tasks
     public partial class show_task_list : Form
     {
         // アクセスページ
-        main_menu menu = new main_menu();
-        new_task_list new_task = new new_task_list();
-        edit_task_list edit_task = new edit_task_list();
+        main_menu tl_Menu = new main_menu();
+        new_task_list NewTask = new new_task_list();
+        edit_task_list EditTask = new edit_task_list();
 
         // 検索結果格納リスト
         private List<string> TaskTitle = new List<string>();
@@ -34,32 +34,32 @@ namespace Event_Tasks
         private List<Label> DueDateLabel = new List<Label>();
         private List<Button> DelTaskButton = new List<Button>();
 
-        int show_task_num = 0;
+        int ShowTaskNum = 0;
+        DateTime ViewDate = DateTime.Now;
 
-        public show_task_list(string text, DateTime[] dates)
+        public show_task_list(DateTime date)
         {
+            ViewDate = date;
             InitializeComponent();
-
-
         }
         private void task_list_Load(object sender, EventArgs e)
         {
-            database_select();
-            menu.DaySelectTaskDB("3");
+            database_select(ViewDate.ToString());
+            tl_Menu.DaySelectTaskDB(ViewDate.ToString());
             label_set();
         }
 
         private void set_task_btn_Click(object sender, EventArgs e)
         {
             this.Hide();
-            new_task.ShowDialog();
+            NewTask.ShowDialog();
             this.Show();
         }
 
         private void edit_btn_Click(object sender, EventArgs e)
         {
             this.Hide();
-            edit_task.ShowDialog();
+            EditTask.ShowDialog();
             this.Show();
         }
 
@@ -68,7 +68,7 @@ namespace Event_Tasks
             this.Close();
         }
 
-        public void database_select()
+        public void database_select(string dayFormat)
         {
             string connectString = "Data Source=WIN-DN6B589V2SO\\SQLEXPRESS;Integrated Security=True;Connect Timeout=30;Encrypt=False;";
             
@@ -80,14 +80,16 @@ namespace Event_Tasks
                     connection.Open();
                     var query = "SELECT user_id, task_title, due_date, task_priority " +
                                 "FROM event_tasks.dbo.task " +
-                                "WHERE user_id = 1 AND ";
+                                "WHERE user_id = 1 " +
+                                string.Format("AND due_date = '{0}'", dayFormat);
 
                     var count_query = "SELECT COUNT(*) " +
                                       "FROM event_tasks.dbo.task " +
-                                      "WHERE user_id = 1";
-                    
+                                      "WHERE user_id = 1 " +
+                                      string.Format("AND due_date = '{0}'", dayFormat);
+
                     SqlCommand count_cmd = new SqlCommand(count_query, connection);
-                    show_task_num = (int)count_cmd.ExecuteScalar();
+                    ShowTaskNum = (int)count_cmd.ExecuteScalar();
                     
                     SqlCommand cmd = new SqlCommand(query, connection);
                     using (SqlDataReader reader = cmd.ExecuteReader())
@@ -98,7 +100,7 @@ namespace Event_Tasks
                             TaskTitle.Add(reader["task_title"] as string);
                             TaskDueDate.Add(reader["due_date"].ToString());
                             TaskPriority.Add(reader["task_priority"].ToString());
-                            Console.WriteLine($"{reader["task_title"]}, {reader["due_date"]}, {reader["task_priority"]}");
+                            // Console.WriteLine($"{reader["task_title"]}, {reader["due_date"]}, {reader["task_priority"]}");
                         }
                     }
                 }
@@ -114,7 +116,7 @@ namespace Event_Tasks
 
         private void label_set()
         {
-            for (int i = 0; i < show_task_num; i++)
+            for (int i = 0; i < ShowTaskNum; i++)
             {
                 AddToolList(i);
                 TaskTitleLabel[i].Text = TaskTitle[i];

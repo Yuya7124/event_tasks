@@ -14,18 +14,20 @@ namespace EventTasks
 {
     public partial class main_menu : Form
     {
-        DateTime dt = DateTime.Now;
-        int BetweenMonth = 0;
+        // 日付取得
+        DateTime dt = DateTime.Now;　// 現在の日付
+        int BetweenMonth = 0; // 選択月の間
 
         // 動的に追加するツール
         private Label[] CalendarDays;
 
         // アクセスページ
-        new_task_list new_task = new new_task_list();
+        new_task_list NewTask = new new_task_list();
 
         public main_menu()
         {
             CalendarDays = new Label[42]; // 初期化コンストラクタ
+            edit_calendar(dt.Date);
             InitializeComponent();
         }
 
@@ -33,7 +35,6 @@ namespace EventTasks
         {
             monthly.Text = dt.ToString("yyyy.MM");
             present_month_btn.Text = dt.Day.ToString("d");
-            edit_calendar(dt.Date);
         }
 
         private void prev_btn_Click(object sender, EventArgs e)
@@ -86,7 +87,6 @@ namespace EventTasks
                         Size = new Size(80, 60),
                         Location = new Point(110 + 80 * (i % 7), 80 + 60 * (i / 7)),
                         LinkVisited = false,
-                        Tag = i
                     };
                     CalendarDays[i].Click += new EventHandler(CalendarDays_Click);
                 }
@@ -102,7 +102,7 @@ namespace EventTasks
                         BackColor = Color.Transparent,
                         BorderStyle = BorderStyle.FixedSingle,
                         Size = new Size(80, 60),
-                        Location = new Point(110 + 80 * (i % 7), 80 + 60 * (i / 7)),
+                        Location = new Point(110 + 80 * (i % 7), 80 + 60 * (i / 7))
                     };
                 }
 
@@ -157,22 +157,16 @@ namespace EventTasks
             LinkLabel clickedLabel = sender as LinkLabel;
             if (clickedLabel != null)
             {
-                // Tagから日付を取得
-                DateTime[] dates = clickedLabel.Tag as DateTime[];
-                if (dates != null)
-                {
-                    foreach (DateTime date in dates)
-                    {
-                        DaySelectTaskDB(dates.ToString());
-                        Console.WriteLine(date.ToString("yyyy-MM-dd"));
-                    }
-                }
-                /*
-                show_task_list show_task = new show_task_list(clickedLabel.Text, dates);
+                // 日付を取得
+                int select_d = Int32.Parse(clickedLabel.Text);
+                DateTime select_date = dt.AddMonths(BetweenMonth);
+                select_date = new DateTime(select_date.Year, select_date.Month, select_d);
+                // Console.WriteLine(select_date.ToString("yyyy.MM.dd"));
+ 
+                show_task_list ShowTask = new show_task_list(select_date);
                 this.Hide();
-                show_task.ShowDialog();
+                ShowTask.ShowDialog();
                 this.Show();
-                */
             }
         }
 
@@ -186,7 +180,7 @@ namespace EventTasks
         private void task_btn_Click(object sender, EventArgs e)
         {
             this.Hide();
-            new_task.ShowDialog();
+            NewTask.ShowDialog();
             this.Show();
         }
 
@@ -230,8 +224,7 @@ namespace EventTasks
                         while (reader.Read())
                         {
                             due_day = reader["due_date"].ToString();
-                            Console.WriteLine($"{reader["task_title"]}, {reader["due_date"]}, {reader["task_priority"]}");
-                            
+                            // Console.WriteLine($"{reader["task_title"]}, {reader["due_date"]}, {reader["task_priority"]}");
                         }
                     }
                 }
