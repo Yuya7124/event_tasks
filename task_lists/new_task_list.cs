@@ -37,7 +37,7 @@ namespace Event_Tasks
             AddToolList(task_num);
         }
 
-        private void set_task_btn_Click(object sender, EventArgs e)
+        private void add_task_btn_Click(object sender, EventArgs e)
         {
             task_num++;
             AddToolList(task_num);
@@ -75,19 +75,22 @@ namespace Event_Tasks
                 }
             }
 
-            // 1つの状態で削除ボタンを押したとき
-            if (task_num >= -1)
-            {
-                TaskTitleTextBox[task_num].Text = "";
-                PriorityBox[task_num].Value = 1;
-                DueDataBox[task_num].Value = DateTime.Now;
+            TaskTitleTextBox[task_num].Text = "";
+            PriorityBox[task_num].Value = 1;
+            DueDataBox[task_num].Value = DateTime.Now;
 
-                Controls.Remove(TaskTitleTextBox[task_num]);
-                Controls.Remove(PriorityBox[task_num]);
-                Controls.Remove(DueDataBox[task_num]);
-                Controls.Remove(DelTaskButton[task_num]);
-                Controls.Remove(TaskNumLabel[task_num]);
-                task_num--;
+            Controls.Remove(TaskTitleTextBox[task_num]);
+            Controls.Remove(PriorityBox[task_num]);
+            Controls.Remove(DueDataBox[task_num]);
+            Controls.Remove(DelTaskButton[task_num]);
+            Controls.Remove(TaskNumLabel[task_num]);
+            task_num--;
+
+            // 1つの状態で削除ボタンを押したとき
+            if (task_num < 0)
+            {
+                task_num++;
+                AddToolList(task_num);
             }
         }
 

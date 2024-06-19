@@ -32,7 +32,7 @@
             this.due_day_label = new System.Windows.Forms.Label();
             this.priority_label = new System.Windows.Forms.Label();
             this.menu_name = new System.Windows.Forms.Label();
-            this.set_task_btn = new System.Windows.Forms.Button();
+            this.add_task_btn = new System.Windows.Forms.Button();
             this.save_btn = new System.Windows.Forms.Button();
             this.return_btn = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -83,18 +83,18 @@
             this.menu_name.TabIndex = 5;
             this.menu_name.Text = "New Task Lists";
             // 
-            // set_task_btn
+            // add_task_btn
             // 
-            this.set_task_btn.BackColor = System.Drawing.Color.SeaGreen;
-            this.set_task_btn.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.set_task_btn.ForeColor = System.Drawing.SystemColors.Control;
-            this.set_task_btn.Location = new System.Drawing.Point(495, 9);
-            this.set_task_btn.Name = "set_task_btn";
-            this.set_task_btn.Size = new System.Drawing.Size(80, 30);
-            this.set_task_btn.TabIndex = 6;
-            this.set_task_btn.Text = "➕ 作成";
-            this.set_task_btn.UseVisualStyleBackColor = false;
-            this.set_task_btn.Click += new System.EventHandler(this.set_task_btn_Click);
+            this.add_task_btn.BackColor = System.Drawing.Color.SeaGreen;
+            this.add_task_btn.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.add_task_btn.ForeColor = System.Drawing.SystemColors.Control;
+            this.add_task_btn.Location = new System.Drawing.Point(495, 9);
+            this.add_task_btn.Name = "add_task_btn";
+            this.add_task_btn.Size = new System.Drawing.Size(80, 30);
+            this.add_task_btn.TabIndex = 6;
+            this.add_task_btn.Text = "➕ 作成";
+            this.add_task_btn.UseVisualStyleBackColor = false;
+            this.add_task_btn.Click += new System.EventHandler(this.add_task_btn_Click);
             // 
             // save_btn
             // 
@@ -125,7 +125,7 @@
             this.ClientSize = new System.Drawing.Size(584, 461);
             this.Controls.Add(this.return_btn);
             this.Controls.Add(this.save_btn);
-            this.Controls.Add(this.set_task_btn);
+            this.Controls.Add(this.add_task_btn);
             this.Controls.Add(this.menu_name);
             this.Controls.Add(this.priority_label);
             this.Controls.Add(this.due_day_label);
@@ -145,7 +145,7 @@
         private System.Windows.Forms.Label due_day_label;
         private System.Windows.Forms.Label priority_label;
         private System.Windows.Forms.Label menu_name;
-        private System.Windows.Forms.Button set_task_btn;
+        private System.Windows.Forms.Button add_task_btn;
         private System.Windows.Forms.Button save_btn;
         private System.Windows.Forms.Button return_btn;
     }
