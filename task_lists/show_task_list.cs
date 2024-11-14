@@ -22,6 +22,7 @@ namespace Event_Tasks
         new_task_list NewTask = new new_task_list();
         edit_task_list EditTask = new edit_task_list();
 
+
         // 検索結果格納リスト
         private List<string> TaskTitle = new List<string>();
         private List<string> TaskDueDate = new List<string>();
@@ -37,6 +38,7 @@ namespace Event_Tasks
         int ShowTaskNum = 0;
         DateTime ViewDate = DateTime.Now;
 
+
         public show_task_list(DateTime date)
         {
             ViewDate = date;
@@ -46,6 +48,7 @@ namespace Event_Tasks
         {
             database_select(ViewDate.ToString());
             tl_Menu.DaySelectTaskDB(ViewDate.ToString());
+            task_date.Text = ViewDate.ToString("yyyy / MM / dd");
             label_set();
         }
 
@@ -182,6 +185,11 @@ namespace Event_Tasks
             Controls.Add(DueDateLabel[index]);
             Controls.Add(DelTaskButton[index]);
             Controls.Add(TaskNumLabel[index]);
+        }
+
+        private void task_date_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

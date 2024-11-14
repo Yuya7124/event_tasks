@@ -36,6 +36,7 @@
             this.edit_btn = new System.Windows.Forms.Button();
             this.return_btn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.task_date = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // task_title_label
@@ -128,11 +129,24 @@
             this.label1.TabIndex = 16;
             this.label1.Text = "完了ボタン";
             // 
+            // task_date
+            // 
+            this.task_date.AutoSize = true;
+            this.task_date.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.task_date.Location = new System.Drawing.Point(227, 9);
+            this.task_date.Name = "task_date";
+            this.task_date.Size = new System.Drawing.Size(146, 25);
+            this.task_date.TabIndex = 17;
+            this.task_date.Text = "yyyy/MM/dd";
+            this.task_date.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.task_date.Click += new System.EventHandler(this.task_date_Click);
+            // 
             // show_task_list
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(591, 461);
+            this.Controls.Add(this.task_date);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.return_btn);
             this.Controls.Add(this.edit_btn);
@@ -160,5 +174,6 @@
         private System.Windows.Forms.Button edit_btn;
         private System.Windows.Forms.Button return_btn;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label task_date;
     }
 }

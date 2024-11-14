@@ -35,6 +35,7 @@
             this.set_task_btn = new System.Windows.Forms.Button();
             this.save_btn = new System.Windows.Forms.Button();
             this.return_btn = new System.Windows.Forms.Button();
+            this.task_edit_date = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // task_title_label
@@ -117,11 +118,24 @@
             this.return_btn.UseVisualStyleBackColor = true;
             this.return_btn.Click += new System.EventHandler(this.return_btn_Click);
             // 
+            // task_edit_date
+            // 
+            this.task_edit_date.AutoSize = true;
+            this.task_edit_date.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.task_edit_date.Location = new System.Drawing.Point(213, 9);
+            this.task_edit_date.Name = "task_edit_date";
+            this.task_edit_date.Size = new System.Drawing.Size(146, 25);
+            this.task_edit_date.TabIndex = 10;
+            this.task_edit_date.Text = "yyyy/MM/dd";
+            this.task_edit_date.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.task_edit_date.Click += new System.EventHandler(this.task_edit_date_Click);
+            // 
             // edit_task_list
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(584, 461);
+            this.Controls.Add(this.task_edit_date);
             this.Controls.Add(this.return_btn);
             this.Controls.Add(this.save_btn);
             this.Controls.Add(this.set_task_btn);
@@ -145,5 +159,6 @@
         private System.Windows.Forms.Button set_task_btn;
         private System.Windows.Forms.Button save_btn;
         private System.Windows.Forms.Button return_btn;
+        private System.Windows.Forms.Label task_edit_date;
     }
 }
